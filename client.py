@@ -7,7 +7,7 @@ class SimonCloud:
 		self.s.connect((target, port))
 		self.t = target;self.p = port
 	def set(self, name, content): # Data Seting
-		content = content.replace("\n", chr(1114111))
+		content = content.replace("\n", "/n/*")
 		p = f"GET / HTTP/1.1\r\nHost: {self.t}:{self.p}\r\nCommand: set {name} {content}\r\n\r\n".encode()
 		self.s.sendall(p)
 	def get(self, name): # Data Geting
@@ -17,4 +17,4 @@ class SimonCloud:
 		p = f"GET / HTTP/1.1\r\nHost: {self.t}:{self.p}\r\nCommand: com {c}\r\n\r\n".encode()
 		self.s.sendall(p)
 	def recv(self):
-		return self.s.recv(999999999).decode().split("\r\n\r\n")[1]
+		return self.s.recv(999999999).decode().split("\r\n\r\n")[1].replace("/n/*", "\n")
