@@ -28,3 +28,5 @@ SimonCloud is a simple cloud storage system hosted on PythonAnywhere.
 - Feel free to report any issues encountered during usage through GitHub.
 
 We hope you find success using SimonCloud!
+
+# [Show Politics](https://github.com/aertsimon90/politics/blob/main/README.md)
